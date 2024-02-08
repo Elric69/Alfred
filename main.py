@@ -5,8 +5,8 @@ import os
 import json
 import discord
 from discord.ext.commands import Bot
-#from keepAlive import keep_alive
-#keep_alive()
+from keepAlive import keep_alive
+keep_alive()
 intent = discord.Intents.all()
 bot = Bot(command_prefix="!",intents=intent)
 owner = 86686874094220083300
