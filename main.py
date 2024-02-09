@@ -9,7 +9,7 @@ from keepAlive import keep_alive
 keep_alive()
 intent = discord.Intents.all()
 bot = Bot(command_prefix="!",intents=intent)
-owner = 86686874094220083300
+owner = 866868740942200833
 
 def CreateDelete(typeCD : str, cid : int):
 	with open("channels.json","r") as file:
