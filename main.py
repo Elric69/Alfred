@@ -47,8 +47,8 @@ async def on_ready():
 async def say2(interaction : discord.Interaction):
 	bot_owner = bot.get_user(owner)
 	embed = discord.Embed(colour = discord.Colour.random())
-	embed.set_author(name=f"{bot_owner.name}",icon_url=bot_owner.avatar,url = "https://discordapp.com/users/866868740942200833")
-	embed.add_field(name = "Help message", value="Greetings! This is an AI ChatBot\nTo use this bot you can use [ ``el <Your Message>`` ]\nOr you can set up a particular channel for the bot by using [ ``/set`` ] command\n[ ``/remove`` ] to remove channel for chatbot reply\nIf getting any issue contact [Admin](https://discordapp.com/users/866868740942200833)" ,inline = False)
+	embed.set_author(name=f"{bot_owner.name}",icon_url=bot_owner.avatar,url = "https://discord.com/users/866868740942200833")
+	embed.add_field(name = "Help message", value="Greetings! This is an AI ChatBot\nTo use this bot you can use [ ``el <Your Message>`` ]\nOr you can set up a particular channel for the bot by using [ ``/set`` ] command\n[ ``/remove`` ] to remove channel for chatbot reply\nIf getting any issue contact [Admin](https://discord.com/users/866868740942200833)" ,inline = False)
 	await interaction.response.send_message(embed = embed)
 
 @bot.tree.command(name="remove",description="Remove the channel for bot [only admins can use]")
