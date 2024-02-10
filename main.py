@@ -36,8 +36,6 @@ def AiChatbot(message):
 
 @bot.event
 async def on_ready():
-	os.system('clear')
-	print("Bot is on")
 	await bot.change_presence(activity=discord.Streaming(name=  "Mirage", url='https://www.twitch.tv/shiv09ds'))
 	print(bot.user.id)
 	synced = await bot.tree.sync()
