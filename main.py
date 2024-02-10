@@ -5,7 +5,6 @@ import os
 import json
 import discord
 from discord.ext.commands import Bot
-from discord import app_commands
 from keepAlive import keep_alive
 keep_alive()
 intent = discord.Intents.all()
@@ -45,14 +44,12 @@ async def on_ready():
 	print(f"Synced {len(synced)} command(s)")
 
 @bot.tree.command(name="help",description="Get the information about bot")
-@app_commands.describe(embed = "Help message")
 async def say2(interaction : discord.Interaction):
 	embed = discord.Embed(colour = discord.Colour.random())
 	embed.add_field(name = "Help message", value="Greetings! This is an AI ChatBot\nTo use this bot you can use [ ``el <Your Message>`` ]\nOr you can set up a particular channel for the bot by using [ ``/set`` ] command\n[ ``/remove`` ] to remove channel for chatbot reply\nIf getting any issue contact [Admin](https://discordapp.com/users/866868740942200833)" ,inline = False)
 	await interaction.response.send_message(embed = embed)
 
 @bot.tree.command(name="remove",description="Remove the channel for bot [only admins can use]")
-@app_commands.describe(des = "Remove channel")
 async def remove_channel(interaction : discord.Interaction):
 	uid = interaction.user.id
 	cid = interaction.channel_id
@@ -66,7 +63,6 @@ async def remove_channel(interaction : discord.Interaction):
 		await interaction.response.send_message("You don't have access to the command for more info use ``/help``")
 
 @bot.tree.command(name="set",description="Set the channel for bot[only admins can use]")
-@app_commands.describe(des = "set channel")
 async def set_channel(interaction : discord.Interaction):
 	uid = interaction.user.id
 	cid = interaction.channel_id
